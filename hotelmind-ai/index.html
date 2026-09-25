@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotelMind AI — Intelligent Agentic Operations for Smart Hotels</title>
+    <meta name="description" content="Multi-agent AI platform orchestrating guest experience, hotel operations, and revenue intelligence." />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('hotelmind_theme');
+          var theme = saved === 'light' ? 'light' : 'dark';
+          document.documentElement.classList.add(theme);
+          document.documentElement.classList.remove(theme === 'dark' ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="dark bg-slate-950 text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

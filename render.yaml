@@ -1,0 +1,26 @@
+# Render Blueprint Specification for Hotel Management Root
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  # Option 1: Static Site (Fast, Free, Recommended)
+  - type: web
+    name: hotelmind-ai
+    runtime: static
+    buildCommand: cd hotelmind-ai && npm install && npm run build
+    staticPublishPath: ./hotelmind-ai/dist
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    routes:
+      # React Router SPA catch-all rewrite rule
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x

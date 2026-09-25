@@ -1,0 +1,22 @@
+{
+  "name": "hotelmind-ai-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HotelMind AI - Intelligent Hospitality Multi-Agent Operations Platform",
+  "scripts": {
+    "install-deps": "npm --prefix hotelmind-ai install",
+    "build": "npm --prefix hotelmind-ai install && npm --prefix hotelmind-ai run build",
+    "start": "npm --prefix hotelmind-ai start",
+    "dev": "npm --prefix hotelmind-ai run dev"
+  },
+  "keywords": [
+    "hospitality",
+    "hotel-management",
+    "ai-agents",
+    "react",
+    "vite",
+    "render"
+  ],
+  "author": "",
+  "license": "ISC"
+}

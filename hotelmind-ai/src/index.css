@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html.dark, body.dark {
+    color-scheme: dark;
+    background-color: #020617;
+    color: #f8fafc;
+  }
+  html.light, body.light {
+    color-scheme: light;
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+  body {
+    @apply bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-200 dark:bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-slate-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500 dark:bg-slate-500;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm dark:shadow-none transition-colors duration-200;
+  }
+  .card-hover {
+    @apply card hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 shadow-sm;
+  }
+  .btn-secondary {
+    @apply bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 border border-slate-300 dark:border-slate-700;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green {
+    @apply badge bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800/50;
+  }
+  .badge-blue {
+    @apply badge bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-400 border border-blue-300 dark:border-blue-800/50;
+  }
+  .badge-amber {
+    @apply badge bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-800/50;
+  }
+  .badge-red {
+    @apply badge bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-400 border border-red-300 dark:border-red-800/50;
+  }
+  .badge-slate {
+    @apply badge bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 border border-slate-300 dark:border-slate-700;
+  }
+  .section-title {
+    @apply text-lg font-semibold text-slate-900 dark:text-slate-100;
+  }
+  .section-subtitle {
+    @apply text-sm text-slate-500 dark:text-slate-400;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150;
+  }
+  .nav-item-active {
+    @apply nav-item bg-brand-50 text-brand-700 dark:bg-brand-600/20 dark:text-brand-400 border border-brand-200 dark:border-brand-600/30;
+  }
+  .nav-item-inactive {
+    @apply nav-item text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800;
+  }
+  .stat-card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm dark:shadow-none transition-colors duration-200;
+  }
+  .workflow-node {
+    @apply bg-slate-100 dark:bg-slate-800 border-2 rounded-xl px-4 py-3 text-center cursor-pointer transition-all duration-200 select-none;
+  }
+  .workflow-node:hover {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-500 to-blue-500 dark:from-brand-400 dark:to-blue-400 bg-clip-text text-transparent;
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  }
+  .glow-green {
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+  }
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+}
