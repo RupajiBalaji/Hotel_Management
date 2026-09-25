@@ -34,10 +34,9 @@ export interface GeminiTelemetry {
   rotationEvents: RotationEvent[];
 }
 
-// Default keys from environment or provided list
 const RAW_KEYS = (
-  import.meta.env.VITE_GEMINI_API_KEYS ||
-  'AIzaSyAtSNHZustb6NrJJQw-FbigMihes5UgTtU,AIzaSyCeK8rJut5skMSTQuCfc0eip6cVbwG-wZg,AIzaSyB3U63hjXtAVLM012Hbvv8p2pSpV4L6lo0,AIzaSyB5tQHmqazUj3hB9y99SA7CtCouAcoNtn8,AIzaSyD3kmkmribUP88DthwYt-o1Syvcc9m35pM,AIzaSyAcyVQ2JaIB5ko4nej-XFBJE93pJ4ge4KA'
+  (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEYS) ||
+  ''
 )
   .split(',')
   .map((k: string) => k.trim())
